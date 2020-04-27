@@ -1,0 +1,49 @@
+
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      <ion-title>
+        Dashboard
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+  <ion-content>  
+<ion-row>
+  <ion-col >
+    <ion-card style="width: 300px;" (click)="redirectTo('food')">
+          <img style="width: 300px; height:200px;" src="../../assets/image/food.jpg" >
+          <ion-card-header>
+            <ion-card-title>Food</ion-card-title>
+          </ion-card-header> 
+        </ion-card>
+    
+  </ion-col>
+  <ion-col >
+    <ion-card style="width: 300px;"  (click)="redirectTo('electronic')">
+      <img style="width: 300px; height:200px;" src="../../assets/image/electro.jpg" >
+      <ion-card-header>
+        <ion-card-title>Electronic</ion-card-title>
+      </ion-card-header> 
+    </ion-card>
+  </ion-col>
+  <ion-col >
+    <ion-card style="width: 300px;"  (click)="redirectTo('furniture')">
+      <img style="width: 300px; height:200px;" src="../../assets/image/furniture.jpg" >
+      <ion-card-header>
+        <ion-card-title>Furniture</ion-card-title>
+      </ion-card-header> 
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-content>
+</ion-app>
+
+
+
+

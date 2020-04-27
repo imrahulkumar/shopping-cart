@@ -1,3 +1,20 @@
 <ion-app>
+  <ion-menu side="start" menuId="first" contentId="content" >
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Navigate</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content id="content">
+      <ion-list>
+      <ion-menu-toggle auto-hide="true">
+        <ion-item [routerLink]="['/dashboard']" (click)="hey()" routerDirection="forward">
+            <ion-icon name="home-outline" slot="start"></ion-icon>
+               Home
+        </ion-item>
+      </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>

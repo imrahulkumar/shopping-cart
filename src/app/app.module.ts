@@ -15,6 +15,7 @@ import { PopOverComponent } from './components/pop-over/pop-over.component';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
+
 @NgModule({
   declarations: [AppComponent, PopOverComponent],
   entryComponents: [PopOverComponent],

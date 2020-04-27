@@ -13,6 +13,7 @@ export class AppComponent {
 
   public counter = 0;
   toast: any;
+  navigate : any;
 
   constructor(
     private platform: Platform,
@@ -56,5 +57,8 @@ export class AppComponent {
       console.log(toastData);
       toastData.present();
     });
+  }
+  hey(){
+    console.log("sdsds")
   }
 }

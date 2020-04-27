@@ -1,7 +1,10 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
     <ion-title>
-      Food Shop
+      {{typeShopping | titlecase}} Shop
     </ion-title>
     <ion-buttons slot="end" (click)="presentPopover()">
       <ion-icon slot="icon-only" name="funnel"></ion-icon>

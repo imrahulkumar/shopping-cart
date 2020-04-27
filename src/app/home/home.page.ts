@@ -4,6 +4,8 @@ import { ModalController, AlertController, PopoverController } from '@ionic/angu
 import { CartModalPage } from '../cart-modal/cart-modal.page';
 import { BehaviorSubject } from 'rxjs';
 import { PopOverComponent } from '../components/pop-over/pop-over.component';
+import { DataService } from '../services/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -15,20 +17,27 @@ export class HomePage {
   products = [];
   cartItemCount: BehaviorSubject<number>;
   cartIsEmpty: boolean;
+  subscription: Subscription;
+  typeShopping:any;
 
   @ViewChild('cart', {static: false, read: ElementRef})fab: ElementRef;
 
   constructor(private cartService: CartService,
               private modalCtrl: ModalController,
               private alertDialog: AlertController,
-              public popoverController: PopoverController) {}
+              public popoverController: PopoverController,
+              private receivedType:DataService) {}
 
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {
-    this.products = this.cartService.getProducts();
+    this.subscription = this.receivedType.currentMessage.subscribe(d =>{
+         this.typeShopping = d;
+    })
+    this.products = this.cartService.getProducts(this.typeShopping);
     this.cart = this.cartService.getCart();
     this.cartIsEmpty = true;
     this.cartItemCount = this.cartService.getCartItemCount();
+    
   }
 
   addToCart(product) {
@@ -80,5 +89,8 @@ export class HomePage {
       translucent: true,
     });
     return await popover.present();
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
