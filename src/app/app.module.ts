@@ -14,12 +14,24 @@ import { PopOverComponent } from './components/pop-over/pop-over.component';
 
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
-  declarations: [AppComponent, PopOverComponent],
+  declarations: [
+    AppComponent, 
+    PopOverComponent,     
+    LoginComponent, 
+    SignupComponent
+  ],
   entryComponents: [PopOverComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  CartModalPageModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule, 
+    CartModalPageModule
+    ],
   providers: [
     StatusBar,
     SplashScreen,
