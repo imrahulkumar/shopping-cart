@@ -32,11 +32,11 @@ export class HomePage {
   ngOnInit() {
     this.subscription = this.receivedType.currentMessage.subscribe(d =>{
          this.typeShopping = d;
+         this.products = this.cartService.getProducts(this.typeShopping);        
     })
-    this.products = this.cartService.getProducts(this.typeShopping);
-    this.cart = this.cartService.getCart();
-    this.cartIsEmpty = true;
-    this.cartItemCount = this.cartService.getCartItemCount();
+         this.cart = this.cartService.getCart();
+         this.cart.length == 0 ? this.cartIsEmpty = true : this.cartIsEmpty = false;         
+         this.cartItemCount = this.cartService.getCartItemCount();
     
   }
 

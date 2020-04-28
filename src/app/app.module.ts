@@ -9,7 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { CartModalPageModule } from './cart-modal/cart-modal.module';
+import { CartModalPageModule }   from './cart-modal/cart-modal.module';
 import { PopOverComponent } from './components/pop-over/pop-over.component';
 
 import { CallNumber } from '@ionic-native/call-number/ngx';

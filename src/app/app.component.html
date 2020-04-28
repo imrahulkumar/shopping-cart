@@ -8,10 +8,22 @@
     <ion-content id="content">
       <ion-list>
       <ion-menu-toggle auto-hide="true">
-        <ion-item [routerLink]="['/dashboard']" (click)="hey()" routerDirection="forward">
+        <ion-item style="pointer-events: auto !important;" [routerLink]="['/dashboard']"  routerDirection="forward">
             <ion-icon name="home-outline" slot="start"></ion-icon>
                Home
         </ion-item>
+        <ion-item style="pointer-events: auto !important;" (click)="redirectTo('food')" routerDirection="forward">
+          <ion-icon name="fast-food-outline" slot="start"></ion-icon>
+             Food
+      </ion-item>
+      <ion-item style="pointer-events: auto !important;" (click)="redirectTo('electronic')"  routerDirection="forward">
+        <ion-icon name="tv-outline" slot="start"></ion-icon>
+        Electronic
+    </ion-item>
+    <ion-item style="pointer-events: auto !important;"  (click)="redirectTo('furniture')" routerDirection="forward">
+      <ion-icon name="file-tray-full-outline" slot="start"></ion-icon>
+      Furniture
+  </ion-item>
       </ion-menu-toggle>
       </ion-list>
     </ion-content>

@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { Platform, ToastController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Router } from '@angular/router';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,9 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private route: Router,
+    private send:DataService
   ) {
     this.initializeApp();
   }
@@ -58,7 +62,10 @@ export class AppComponent {
       toastData.present();
     });
   }
-  hey(){
-    console.log("sdsds")
-  }
+
+  redirectTo(type){    
+    this.route.navigate(['home']);
+    this.send.changeMessage(type);
+    
+}
 }
