@@ -16,6 +16,9 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { FormsModule } from '@angular/forms';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 
 @NgModule({
@@ -23,14 +26,17 @@ import { SignupComponent } from './signup/signup.component';
     AppComponent, 
     PopOverComponent,     
     LoginComponent, 
-    SignupComponent
+    SignupComponent,
+    ForgotPasswordComponent,
+    PrivacyComponent
   ],
-  entryComponents: [PopOverComponent],
+  entryComponents: [PopOverComponent, PrivacyComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule, 
-    CartModalPageModule
+    CartModalPageModule,
+    FormsModule
     ],
   providers: [
     StatusBar,
@@ -39,6 +45,7 @@ import { SignupComponent } from './signup/signup.component';
     CallNumber,
     SocialSharing
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule {}

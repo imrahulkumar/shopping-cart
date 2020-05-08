@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
-import { Platform, ToastController } from '@ionic/angular';
+import { Platform, ToastController, PopoverController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
 import { DataService } from './services/data.service';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ export class AppComponent {
     private statusBar: StatusBar,
     private toastController: ToastController,
     private route: Router,
-    private send:DataService
+    private send:DataService,
+    public popoverController: PopoverController
   ) {
     this.initializeApp();
   }
@@ -65,7 +67,18 @@ export class AppComponent {
 
   redirectTo(type){    
     this.route.navigate(['home']);
-    this.send.changeMessage(type);
-    
+    this.send.changeMessage(type);    
+}
+openPrivacy(){
+  this.presentPopover()
+}
+async presentPopover() {
+  const popover = await this.popoverController.create({
+    component: PrivacyComponent,
+    cssClass:"privacy-setting",
+    translucent: true
+  });
+  popover.style.cssText = '--min-width: 300px; --max-width: 300px; --min-height:300px;';
+  return await popover.present();
 }
 }
