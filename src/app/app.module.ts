@@ -19,6 +19,7 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { HelpComponent } from './help/help.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { PrivacyComponent } from './privacy/privacy.component';
     LoginComponent, 
     SignupComponent,
     ForgotPasswordComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    HelpComponent
   ],
   entryComponents: [PopOverComponent, PrivacyComponent],
   imports: [

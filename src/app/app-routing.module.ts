@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { HelpComponent } from './help/help.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'cart-modal', loadChildren: './cart-modal/cart-modal.module#CartModalPageModule' },
   { path: 'login', component:LoginComponent },
   { path: 'sign-up', component:SignupComponent },
-  { path: 'forgot-password', component:ForgotPasswordComponent }
+  { path: 'forgot-password', component:ForgotPasswordComponent },
+  { path: 'help', component:HelpComponent}
 
 ];
 
